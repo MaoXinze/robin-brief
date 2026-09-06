@@ -1,0 +1,12 @@
+# 构建上下文排除清单
+.venv/
+.git/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+output/
+data/
+docs/assets/*.png
+.env
+多智能体项目与日报.docx

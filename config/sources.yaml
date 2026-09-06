@@ -1,0 +1,81 @@
+# 知更 Robin — 数据源配置
+# type: rss | hackernews | arxiv | github_trending
+# weight: 来源权重（去重时保留高权重来源；评分参考项之一）
+# window_hours: 采集时间窗口（覆盖全局默认）；enabled: false 可临时停用
+
+sources:
+  - id: jiqizhixin
+    name: 机器之心
+    type: rss
+    url: https://www.jiqizhixin.com/rss
+    weight: 4
+    lang: zh
+    enabled: true
+
+  - id: qbitai
+    name: 量子位
+    type: rss
+    url: https://www.qbitai.com/feed
+    weight: 4
+    lang: zh
+    enabled: true
+
+  - id: 36kr
+    name: 36氪
+    type: rss
+    url: https://36kr.com/feed
+    weight: 3
+    lang: zh
+    enabled: true
+
+  - id: techcrunch_ai
+    name: TechCrunch AI
+    type: rss
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    weight: 4
+    lang: en
+    enabled: true
+
+  - id: venturebeat_ai
+    name: VentureBeat AI
+    type: rss
+    url: https://venturebeat.com/category/ai/feed/
+    weight: 3
+    lang: en
+    enabled: true
+
+  - id: openai_blog
+    name: OpenAI 官方博客
+    type: rss
+    url: https://openai.com/news/rss.xml
+    weight: 5
+    lang: en
+    enabled: true
+
+  - id: hackernews
+    name: Hacker News
+    type: hackernews
+    query: "AI OR LLM OR OpenAI OR Anthropic OR \"large language model\""
+    min_points: 40          # relaxed 模式自动降为 15
+    weight: 3
+    lang: en
+    enabled: true
+
+  - id: arxiv
+    name: arXiv cs.AI
+    type: arxiv
+    categories: [cs.AI, cs.CL]
+    max_results: 20
+    weight: 2
+    lang: en
+    enabled: true
+
+  - id: github_trending
+    name: GitHub Trending
+    type: github_trending
+    language: python        # 空字符串 = 全语言
+    ai_keywords: [llm, agent, ai, gpt, llm, transformer, rag, diffusion, ml, deep-learning, inference]
+    weight: 3
+    lang: en
+    enabled: true
+    headline_eligible: false  # 仓库条目热度高但新闻性弱：只进快讯，不抢头条

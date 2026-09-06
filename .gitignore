@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# 运行时数据（日报产物与数据库按需保留 demo）
+data/
+output/
+.env
+
+# 私人文档（不上传）
+*.docx
+
+# 编辑器
+.idea/
+.vscode/
+
+# ZCode 本地会话文件
+.zcode/

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>量子位</title>
+<link>https://www.qbitai.com</link>
+<description>追踪人工智能新趋势（测试样例数据）</description>
+<item>
+  <title>字节跳动豆包大模型更新：长文本能力对标 Claude</title>
+  <link>https://www.qbitai.com/2026/09/豆包更新</link>
+  <description>字节跳动旗下豆包大模型完成新一轮更新，官方称长文本理解与生成能力显著提升，中文场景部分指标对标 Claude 系列，火山引擎 API 同步开放。</description>
+  <author>量子位</author>
+  <pubDate>Sat, 05 Sep 2026 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <!-- 与机器之心的 V4 发布同事件，用于测试模糊去重 -->
+  <title>DeepSeek 推出全新 V4 模型，主打低成本推理</title>
+  <link>https://www.qbitai.com/2026/09/deepseek-v4</link>
+  <description>DeepSeek 今日推出 V4 模型，推理价格大幅下降，主打低成本高吞吐，开发者社区反响热烈。</description>
+  <author>量子位</author>
+  <pubDate>Sat, 05 Sep 2026 11:00:00 GMT</pubDate>
+</item>
+<item>
+  <!-- 非 AI 内容，用于测试分类过滤 -->
+  <title>本市城市马拉松赛本周日开跑</title>
+  <link>https://www.qbitai.com/2026/09/marathon</link>
+  <description>本届赛事共设全程、半程两个组别，预计三万人参赛。</description>
+  <author>量子位</author>
+  <pubDate>Sat, 05 Sep 2026 09:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

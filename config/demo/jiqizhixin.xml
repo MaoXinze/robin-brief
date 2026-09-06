@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>机器之心</title>
+<link>https://www.jiqizhixin.com</link>
+<description>人工智能信息服务平台（测试样例数据）</description>
+<item>
+  <title>DeepSeek 正式发布 V4 大模型：推理成本再降 60%</title>
+  <link>https://www.jiqizhixin.com/articles/2026-09-05-1</link>
+  <description>深度求索发布新一代 V4 大模型，采用稀疏化注意力架构，官方称推理成本较上一代下降 60%，长上下文窗口扩展至 512K，API 定价同步下调。多家云厂商宣布同步接入。</description>
+  <author>机器之心编辑部</author>
+  <pubDate>Sat, 05 Sep 2026 10:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>英伟达发布 GB300 推理芯片：大模型推理性能翻倍</title>
+  <link>https://www.jiqizhixin.com/articles/2026-09-05-2</link>
+  <description>英伟达推出面向大模型推理的 GB300 芯片，官方基准显示相比上一代推理性能提升约一倍，首批客户包括多家头部云厂商，预计本季度末量产。</description>
+  <author>机器之心编辑部</author>
+  <pubDate>Sat, 05 Sep 2026 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>智谱 GLM-5 系列宣布开源：320 亿参数免费商用</title>
+  <link>https://www.jiqizhixin.com/articles/2026-09-05-3</link>
+  <description>智谱宣布 GLM-5 系列中的 320 亿参数模型开源并允许免费商用，权重托管于 Hugging Face，社区评测显示其在中文基准上表现强劲。</description>
+  <author>机器之心编辑部</author>
+  <pubDate>Sat, 05 Sep 2026 06:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>2026 世界机器人大会在北京闭幕（超窗旧闻，用于测试时间过滤）</title>
+  <link>https://www.jiqizhixin.com/articles/2026-09-01-9</link>
+  <description>本届大会聚焦具身智能与工业机器人，签约金额创历届新高。</description>
+  <author>机器之心编辑部</author>
+  <pubDate>Tue, 01 Sep 2026 03:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

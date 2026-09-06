@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>arXiv cs.AI</title>
+<id>http://arxiv.org/cs.AI</id>
+<updated>2026-09-05T12:00:00Z</updated>
+<entry>
+  <id>http://arxiv.org/abs/2609.00101</id>
+  <title>Efficient Long-Context Inference via Sparse Attention</title>
+  <link href="http://arxiv.org/abs/2609.00101" rel="alternate" type="text/html"/>
+  <published>2026-09-05T01:00:00Z</published>
+  <updated>2026-09-05T01:00:00Z</updated>
+  <summary>We propose a sparse attention method that reduces long-context inference cost by 4x while preserving accuracy across benchmarks.（测试样例）</summary>
+  <author><name>Test Author A</name></author>
+</entry>
+<entry>
+  <id>http://arxiv.org/abs/2609.00102</id>
+  <title>A Survey on LLM-based Multi-Agent Systems</title>
+  <link href="http://arxiv.org/abs/2609.00102" rel="alternate" type="text/html"/>
+  <published>2026-09-05T08:00:00Z</published>
+  <updated>2026-09-05T08:00:00Z</updated>
+  <summary>This survey reviews 120 papers on LLM-based multi-agent systems, covering orchestration, communication protocols and evaluation.（测试样例）</summary>
+  <author><name>Test Author B</name></author>
+</entry>
+<entry>
+  <id>http://arxiv.org/abs/2608.00999</id>
+  <title>Old entry for window filtering test</title>
+  <link href="http://arxiv.org/abs/2608.00999" rel="alternate" type="text/html"/>
+  <published>2026-08-28T08:00:00Z</published>
+  <updated>2026-08-28T08:00:00Z</updated>
+  <summary>Old paper outside the collection window.</summary>
+  <author><name>Test Author C</name></author>
+</entry>
+</feed>

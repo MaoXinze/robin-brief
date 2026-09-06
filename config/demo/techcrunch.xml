@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>TechCrunch AI</title>
+<link>https://techcrunch.com/category/artificial-intelligence/</link>
+<description>AI industry news (test fixture)</description>
+<item>
+  <title>OpenAI raises $40B at $500B valuation in record funding round</title>
+  <link>https://techcrunch.com/2026/09/05/openai-raises-40b/</link>
+  <description>OpenAI has closed a 40 billion dollar round at a 500 billion dollar valuation, the largest private funding round in tech history, with softbank and sovereign funds participating.</description>
+  <author>TC Staff</author>
+  <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Anthropic launches Claude for Government with FedRAMP compliance</title>
+  <link>https://techcrunch.com/2026/09/05/claude-for-government/</link>
+  <description>Anthropic announced Claude for Government, a FedRAMP-compliant offering targeting public sector agencies, expanding its enterprise business.</description>
+  <author>TC Staff</author>
+  <pubDate>Sat, 05 Sep 2026 07:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>EU AI Act enforcement begins: first fines issued to big tech</title>
+  <link>https://techcrunch.com/2026/09/05/eu-ai-act-fines/</link>
+  <description>European regulators issued the first fines under the EU AI Act, targeting transparency violations in deployed AI systems across the industry.</description>
+  <author>TC Staff</author>
+  <pubDate>Sat, 05 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Manus declares independence: founders return to lead the AI agent lab</title>
+  <link>https://techcrunch.com/2026/09/05/manus-independence/</link>
+  <description>AI agent company Manus announced it will operate independently again, with its founders returning to lead the lab and continue building general agent capabilities.</description>
+  <author>TC Staff</author>
+  <pubDate>Sat, 05 Sep 2026 03:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

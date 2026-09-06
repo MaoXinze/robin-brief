@@ -1,0 +1,49 @@
+{
+  "hits": [
+    {
+      "objectID": "40000001",
+      "title": "OpenAI's new model weights leaked on Hugging Face, removed within an hour",
+      "url": "https://techcrunch.com/2026/09/05/weights-leak/",
+      "author": "leakwatcher",
+      "points": 512,
+      "created_at_i": 1788598841,
+      "story_text": null
+    },
+    {
+      "objectID": "40000002",
+      "title": "Show HN: I built a CLI for comparing LLM prices",
+      "url": "https://github.com/example/llm-price-cli",
+      "author": "indiehacker",
+      "points": 38,
+      "created_at_i": 1788552000,
+      "story_text": null
+    },
+    {
+      "objectID": "40000003",
+      "title": "Google DeepMind's AlphaFold 4 solves protein complex design",
+      "url": "",
+      "author": "foldingfan",
+      "points": 156,
+      "created_at_i": 1788573600,
+      "story_text": null
+    },
+    {
+      "objectID": "40000004",
+      "title": "The state of open-source LLMs in 2026",
+      "url": "https://example.com/state-of-open-llms",
+      "author": "ossnerd",
+      "points": 89,
+      "created_at_i": 1788568200,
+      "story_text": null
+    },
+    {
+      "objectID": "40000005",
+      "title": "Meta Llama 5 early benchmarks leak: strong coding gains",
+      "url": "https://example.com/llama5-leak",
+      "author": "benchmark_bob",
+      "points": 45,
+      "created_at_i": 1788611400,
+      "story_text": null
+    }
+  ]
+}

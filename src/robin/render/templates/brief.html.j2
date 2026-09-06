@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知更早报 · {{ doc.run_date }} {{ doc.weekday_cn }}</title>
+<style>
+  :root {
+    --paper: #faf6ef;          /* 米白纸感 */
+    --paper-deep: #f4eee2;
+    --ink: #2b2a26;            /* 墨色正文 */
+    --ink-soft: #6f6a60;
+    --egg-blue: #2a7f8f;       /* 知更鸟蛋壳蓝 */
+    --egg-blue-light: #d9eef1;
+    --breast-orange: #d95b2a;  /* 知更鸟胸羽橙红 */
+    --breast-orange-light: #fdf1e8;
+    --hairline: #e3dccd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background:
+      linear-gradient(180deg, var(--paper) 0%, #fdfbf6 55%, var(--paper-deep) 100%);
+    color: var(--ink);
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    line-height: 1.7;
+    padding: 24px 12px 40px;
+  }
+  .paper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: rgba(255, 253, 248, .82);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    box-shadow: 0 12px 40px rgba(90, 70, 40, .10);
+    padding: 34px 34px 26px;
+  }
+
+  /* ---------- 刊头 ---------- */
+  .masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 18px; }
+  .masthead .kicker {
+    font-size: 11px; letter-spacing: .55em; color: var(--egg-blue);
+    text-indent: .55em; margin-bottom: 10px; font-weight: 600;
+  }
+  .masthead h1 {
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    font-size: 44px; font-weight: 900; letter-spacing: .12em; line-height: 1.2;
+  }
+  .masthead h1 .accent { color: var(--breast-orange); }
+  .masthead .sub {
+    margin-top: 6px; font-size: 11px; color: var(--ink-soft); letter-spacing: .35em; text-indent: .35em;
+  }
+  .dateline {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 18px; padding: 8px 2px; border-top: 1px solid var(--hairline);
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .dateline .badge {
+    background: var(--egg-blue-light); color: var(--egg-blue);
+    border-radius: 999px; padding: 2px 12px; font-size: 12px; font-weight: 600;
+  }
+  .dateline .weekday { color: var(--ink); font-weight: 700; }
+
+  /* ---------- 今日微语 ---------- */
+  .epigraph {
+    margin: 22px 0 6px; padding: 12px 16px;
+    border-left: 3px solid var(--breast-orange);
+    background: linear-gradient(90deg, var(--breast-orange-light), rgba(253, 241, 232, 0));
+    font-size: 14.5px; color: #7a3d1e; border-radius: 0 4px 4px 0;
+  }
+  .epigraph .tag { font-weight: 700; margin-right: 8px; color: var(--breast-orange); }
+
+  /* ---------- 版块标题 ---------- */
+  .section { margin-top: 30px; }
+  .section-title {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    font-size: 19px; font-weight: 800;
+  }
+  .section-title::before {
+    content: ""; width: 5px; height: 20px; background: var(--egg-blue); border-radius: 2px;
+  }
+  .section-title .en { font-size: 10px; color: #5a544a; letter-spacing: .2em; font-weight: 400; margin-left: auto; }
+
+  /* ---------- 今日头条 ---------- */
+  .headline { padding: 16px 0; border-bottom: 1px dashed var(--hairline); }
+  .headline:last-child { border-bottom: none; }
+  .chip {
+    display: inline-block; background: var(--egg-blue-light); color: var(--egg-blue);
+    font-size: 11.5px; font-weight: 700; padding: 1px 10px; border-radius: 3px; margin-bottom: 8px;
+  }
+  .headline h3 {
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    font-size: 20px; line-height: 1.45; margin-bottom: 6px;
+    word-break: normal; overflow-wrap: break-word;
+  }
+  .headline h3 a { color: var(--ink); text-decoration: none; }
+  .headline h3 a:hover { color: var(--egg-blue); }
+  .headline .summary { font-size: 14.5px; color: #3d3b35; }
+  .comment {
+    margin-top: 10px; padding: 10px 14px;
+    background: var(--breast-orange-light); border-left: 3px solid var(--breast-orange);
+    font-size: 13.5px; border-radius: 0 4px 4px 0;
+  }
+  .comment b { color: var(--breast-orange); }
+  .meta { margin-top: 8px; font-size: 12px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .meta a { color: var(--egg-blue); text-decoration: none; }
+  .meta .stars { color: var(--breast-orange); letter-spacing: 2px; }
+  .meta .reason { flex-basis: 100%; color: #9b958a; }
+
+  /* ---------- 一句话快讯 ---------- */
+  .quicknews { list-style: none; counter-reset: qn; }
+  .quicknews li {
+    counter-increment: qn; position: relative; padding: 9px 0 9px 40px;
+    border-bottom: 1px solid #f0eadb; font-size: 14.5px;
+    word-break: normal; overflow-wrap: break-word;
+  }
+  .quicknews li::before {
+    content: counter(qn); position: absolute; left: 0; top: 10px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--egg-blue-light); color: var(--egg-blue);
+    font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .quicknews .src { font-size: 12px; color: #9b958a; margin-left: 6px; }
+  .quicknews .src a { color: var(--egg-blue); text-decoration: none; }
+
+  /* ---------- 深度解读 ---------- */
+  .analysis-card {
+    background: #fffdf8; border: 1px solid var(--hairline); border-top: 3px solid var(--breast-orange);
+    border-radius: 4px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(90, 70, 40, .05);
+  }
+  .analysis-card h3 { font-size: 17px; margin-bottom: 10px; font-family: "Noto Serif SC", "Songti SC", "SimSun", serif; }
+  .analysis-card h3 a { color: var(--ink); text-decoration: none; }
+  .analysis-card p { font-size: 14px; color: #3d3b35; margin-bottom: 8px; text-align: justify; }
+  .analysis-card .label {
+    display: inline-block; font-weight: 700; color: var(--breast-orange); margin-right: 6px;
+  }
+
+  /* ---------- 昨日回顾 / 页脚 ---------- */
+  .yesterday {
+    margin-top: 26px; font-size: 13px; color: var(--ink-soft);
+    background: var(--paper-deep); border-radius: 4px; padding: 10px 14px;
+  }
+  .yesterday a { color: var(--egg-blue); text-decoration: none; }
+  footer {
+    margin-top: 30px; border-top: 3px double var(--ink); padding-top: 14px;
+    font-size: 12px; color: var(--ink-soft); text-align: center; line-height: 2;
+  }
+  footer .funnel { color: var(--egg-blue); font-weight: 600; }
+  footer .brand { font-weight: 700; color: var(--ink); }
+  footer .demo-note { color: var(--breast-orange); }
+
+  /* ---------- 移动端 ---------- */
+  @media (max-width: 520px) {
+    body { padding: 10px 6px 30px; }
+    .paper { padding: 22px 18px 20px; }
+    .masthead h1 { font-size: 34px; }
+    .headline h3 { font-size: 18px; }
+    .quicknews li { padding-left: 34px; }
+    .dateline { flex-direction: column; gap: 6px; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .paper { box-shadow: none; border: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<main class="paper">
+
+  <!-- 刊头 -->
+  <header class="masthead">
+    <div class="kicker">ROBIN MORNING BRIEF</div>
+    <h1>知更<span class="accent">早报</span></h1>
+    <div class="sub">AI 行业 · 每日 60 秒 · 多智能体编辑部</div>
+    <div class="dateline">
+      <span>{{ doc.lunar_str if doc.lunar_str else "知更编辑部出版" }}</span>
+      <span class="weekday">{{ doc.run_date }} {{ doc.weekday_cn }}</span>
+      <span class="badge">🤖 {{ doc.agent_count }} 个 Agent 协作出版</span>
+    </div>
+  </header>
+
+  {% if doc.epigraph %}
+  <div class="epigraph"><span class="tag">今日微语</span>{{ doc.epigraph }}</div>
+  {% endif %}
+
+  {% if doc.headlines %}
+  <section class="section">
+    <div class="section-title">今日头条 <span class="en">TOP STORIES</span></div>
+    {% for h in doc.headlines %}
+    <article class="headline">
+      <span class="chip">{{ h.category | cat }}</span>
+      <h3><a href="{{ h.url }}" target="_blank" rel="noopener">{{ h.title }}</a></h3>
+      {% if h.summary %}<p class="summary">{{ h.summary }}</p>{% endif %}
+      {% if h.comment %}<div class="comment"><b>为什么重要</b> ｜ {{ h.comment }}</div>{% endif %}
+      <div class="meta">
+        <span>来源：<a href="{{ h.url }}" target="_blank" rel="noopener">{{ h.source_name }}</a></span>
+        <span>重要性 <span class="stars">{{ h.importance | stars }}</span></span>
+        {% if h.score_reason %}<span class="reason">评分理由：{{ h.score_reason }}</span>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if doc.quick_news %}
+  <section class="section">
+    <div class="section-title">一句话快讯 <span class="en">60-SECOND NEWS</span></div>
+    <ol class="quicknews">
+      {% for q in doc.quick_news %}
+      <li>{{ q.text }}<span class="src">— <a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.source_name }}</a></span></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  {% if doc.analysis %}
+  <section class="section">
+    <div class="section-title">深度解读 <span class="en">IN-DEPTH</span></div>
+    {% for a in doc.analysis %}
+    <div class="analysis-card">
+      <h3><a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a></h3>
+      <p><span class="label">背景</span>{{ a.background }}</p>
+      <p><span class="label">影响</span>{{ a.impact }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if doc.yesterday %}
+  <div class="yesterday">🕘 昨日回顾（{{ doc.yesterday.date }}）：{{ doc.yesterday.title }}</div>
+  {% endif %}
+
+  <footer>
+    <div>📡 数据来源：{{ doc.sources_used | join("、") if doc.sources_used else "—" }}</div>
+    <div>
+      {% if doc.funnel %}<span class="funnel">今日采集 {{ doc.funnel.get("collected", 0) }} 条 → 去重 {{ doc.funnel.get("kept", 0) }} 条 → 入报 {{ (doc.funnel.get("headlines", 0) + doc.funnel.get("quick_news", 0)) }}</span>{% endif %}
+      {% if doc.generated_at %} ｜ 生成于 {{ doc.generated_at.strftime("%Y-%m-%d %H:%M") }} CST{% endif %}
+    </div>
+    {% if doc.is_demo %}<div class="demo-note">※ 本期为 mock 演示数据，仅用于展示版面与流程</div>{% endif %}
+    <div><span class="brand">知更 Robin</span> · Multi-Agent Intelligence Daily Brief</div>
+  </footer>
+
+</main>
+</body>
+</html>
